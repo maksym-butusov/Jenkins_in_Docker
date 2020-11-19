@@ -1,0 +1,14 @@
+git
+credentials
+plain-credentials
+ssh-credentials
+workflow-job:2.39
+workflow-aggregator:2.6
+credentials-binding:1.23
+configuration-as-code:1.41
+ssh-agent:latest
+publish-over-ssh:latest
+pipeline-npm:0.9.2
+docker:latest
+blueocean:latest
+maven-invoker-plugin:latest
