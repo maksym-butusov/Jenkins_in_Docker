@@ -43,6 +43,7 @@ RUN apt-get update && \
         ca-certificates \
         curl \
         sudo \
+        ssh \
         gnupg-agent \
         software-properties-common && \
     sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && \
@@ -104,8 +105,10 @@ EXPOSE ${agent_port}
 
 ENV COPY_REFERENCE_FILE_LOG $JENKINS_HOME/copy_reference_file.log
 
+COPY jenkins-cli.jar /opt/src/
+RUN chown jenkins:jenkins /opt/src/jenkins-cli.jar
+COPY jenkins-cli /bin/jenkins-cli
 USER ${user}
-
 COPY jenkins-support /usr/local/bin/jenkins-support
 COPY jenkins.sh /usr/local/bin/jenkins.sh
 COPY tini-shim.sh /bin/tini
