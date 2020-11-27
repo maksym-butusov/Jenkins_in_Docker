@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM jenkins/jenkins:lts
 
 ARG DOCKER_COMPOSE_VERSION=1.27.0
 ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
